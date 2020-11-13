@@ -25,6 +25,9 @@
 - [React](https://reactjs.org/)
 - [React-Native](https://reactnative.dev/)
 - [React-Navigation](https://reactnavigation.org/)
+- [React-Redux](https://react-redux.js.org/)
+- [axios](https://github.com/axios/axios)
+
 
 
 
