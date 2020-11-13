@@ -3,7 +3,7 @@
 
 ## Description
 
-<img src= "overview/eng.png" width =20 >  A work about making an APK with Api and REDUX in React-Native ...
+<img src= "overview/eng.png" width =20 >   A work about making an APK with Api and REDUX in React-Native ...
 
 <img src= "overview/de.png" width =20 >   Eine Arbeit über das Erstellen einer APK mit Api und REDUX in React-Native ...
 
@@ -11,6 +11,11 @@
 
 ![screenshot](overview/Screenshot.gif)
 
+## These are short promotional photos about this app
+
+<img src= "overview/Screenshot-mainPage.jpg" width =180 > <img src= "overview/Screenshot-Details.jpg" width =180 >
+<img src= "overview/Screenshot-fav1.jpg" width =180 > <img src= "overview/Screenshot-fav2.jpg" width =180 >
+<img src= "overview/Screenshot-index.jpg" width =180 >
 
 ### At the end of the project, following topics are to be covered;
 
