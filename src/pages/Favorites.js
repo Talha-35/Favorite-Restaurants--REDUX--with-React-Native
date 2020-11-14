@@ -8,25 +8,22 @@ import {fav} from '../Styles';
 import { SearchBar} from '../components';
 
 const Favorites = () => {
+
+  const selectedRestaurant = useSelector((state) => state.favList);
   const [list, setList] = useState() ;
-   const selectedRestaurant = useSelector((state) => state.favList);
-  //  const selectedRestaurant = originalRestaurantList
 
    const searchRestaurant = (search) => { 
     const filteredRestaurants = selectedRestaurant.filter(restaurant =>{
         const text = search.toUpperCase() ;
         const restaurantName = restaurant.name.toUpperCase() ;
-
         return restaurantName.indexOf(text) > -1;
-
     })
-    setList(filteredRestaurants)        
-}
-
+    setList(filteredRestaurants)
+  }
 
 useEffect(() => {
     setList(selectedRestaurant)
-}, [])
+}, [selectedRestaurant])
 
   return (
     <View style={fav.container}>
@@ -55,7 +52,7 @@ useEffect(() => {
         )}
         // liste ekranı boş iken ekran da yazan yazı
         //  ItemSeparatorComponent={() => <View style={fav.seperator} />}
-      />
+        />
       <TouchableOpacity
         onPress={() => setList([]) }
         style={fav.touch}>
