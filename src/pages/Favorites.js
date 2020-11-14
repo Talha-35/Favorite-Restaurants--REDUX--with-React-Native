@@ -56,11 +56,11 @@ useEffect(() => {
         // liste ekranı boş iken ekran da yazan yazı
         //  ItemSeparatorComponent={() => <View style={fav.seperator} />}
       />
-      {/* <TouchableOpacity
-        onPress={() => null }
+      <TouchableOpacity
+        onPress={() => setList([]) }
         style={fav.touch}>
         <Text style={fav.touchText}>Delete All</Text>
-      </TouchableOpacity> */}
+      </TouchableOpacity>
     </View>
   );
 };
