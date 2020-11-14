@@ -7,7 +7,7 @@ import {detail} from '../Styles';
 
 const RestaurantDetails = (props) => {
   const {item} = props.route.params;
-//   console.log(item);
+
 
   return (
     <View style={detail.container}>
