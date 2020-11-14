@@ -1,21 +1,42 @@
-import React from 'react';
+import React, {useState,useEffect} from 'react';
 import {Text, View, FlatList , TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {useSelector} from 'react-redux';
 
 import {fav} from '../Styles';
 
+import { SearchBar} from '../components';
+
 const Favorites = () => {
+  const [list, setList] = useState() ;
    const selectedRestaurant = useSelector((state) => state.favList);
+  //  const selectedRestaurant = originalRestaurantList
+
+   const searchRestaurant = (search) => { 
+    const filteredRestaurants = selectedRestaurant.filter(restaurant =>{
+        const text = search.toUpperCase() ;
+        const restaurantName = restaurant.name.toUpperCase() ;
+
+        return restaurantName.indexOf(text) > -1;
+
+    })
+    setList(filteredRestaurants)        
+}
+
+
+useEffect(() => {
+    setList(selectedRestaurant)
+}, [])
 
   return (
     <View style={fav.container}>
       <View style={fav.title}>
         <Text style={fav.titleText}>Favorite Restaurants</Text>
       </View>
+      <SearchBar onSearch={value => searchRestaurant(value)}/>
       <FlatList
         keyExtractor={(item, index) => index.toString()}
-        data={selectedRestaurant}
+        data={list}
         renderItem={({item}) => {
           if (item.price == 1) {
             return <Text style={fav.name}>{'❤  ' + item.name}</Text>;
